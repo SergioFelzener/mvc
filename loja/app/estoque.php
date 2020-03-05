@@ -4,12 +4,12 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Produtos extends Model
+class estoque extends Model
 {
     // define colunas
     protected $fillable = [
-        'id', 'nome_produto', 'descricao', 'preco'
+        'id', 'nome', 'quantidade', 'status'
     ];
 
-    protected $table = 'Produtos';
+    protected $table = 'estoque';
 }
