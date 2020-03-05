@@ -14,3 +14,4 @@ class produtos extends Model
 
     protected $table = 'produtos';
 
+}
