@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CriarTabelaEstoque extends Migration
+class CriandoTabelaClientes extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,18 @@ class CriarTabelaEstoque extends Migration
      */
     public function up()
     {
-        Schema::create('Estoque', function (Blueprint $table) {
+        Schema::create('Clientes', function(Blueprint $table){
             $table->bigIncrements('id');
             $table->string('nome');
-            $table->double('quantidade');
-            $table->string('status');
+            $table->string('email');
+            $table->string('endereco');
+            $table->string('telefone');
             $table->timestamps();
+
+
         });
     }
+    
 
     /**
      * Reverse the migrations.
@@ -29,6 +33,6 @@ class CriarTabelaEstoque extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('Estoque');
+        Schema::dropIfExists('Clientes');
     }
 }
