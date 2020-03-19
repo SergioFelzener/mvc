@@ -20,7 +20,10 @@ class vendas extends Model
 
     public function VendedorhasVenda(){
         return $this->hasOne(Vendedores::class, 'id');
+    }
 
+     public function vendedor(){
+        return $this->belongsTo(Vendedores::class, 'vendedor_id');
     }
 
 
