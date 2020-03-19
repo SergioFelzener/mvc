@@ -10,9 +10,8 @@ class ProdutosVenda extends Model
 
     protected $table = 'ProdutosVenda';
 
-    public function ProdutosVendas(){
-        return $this->hasOne(Produtos::class, 'id');
-
+    public function produtos(){
+        return $this->hasMany( ProdutosVenda::class, 'produto_id');
     }
 
 
