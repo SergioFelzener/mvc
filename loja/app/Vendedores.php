@@ -10,7 +10,6 @@ class Vendedores extends Model
 
     protected $table = 'Vendedores';
 
-
 }
 
 

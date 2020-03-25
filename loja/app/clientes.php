@@ -23,8 +23,8 @@ class Clientes extends Model
             vendas::class,
             'cliente_id',
             'produto_id',
-            'id',
             'id'
+
         );
     }
 
