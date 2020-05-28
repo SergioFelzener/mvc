@@ -18,10 +18,13 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::group(['prefix'=> 'v1'], function(){
+Route::group(['middleware' => 'auth.jwt', 'prefix'=> 'v1'], function(){
     Route::get('/Vendedores', 'VendedoresController@index');
     Route::post('/Vendedores', 'VendedoresController@store');
     Route::delete('Vendedores/{id}', 'VendedoresController@destroy');
     Route::get('/Vendedores/{id}', 'VendedoresController@show');
     Route::put('/Vendedores/{id}', 'VendedoresController@update');
 });
+
+Route::post('/login', 'APIController@login');
+Route::get('/login', 'APIController@logout');
