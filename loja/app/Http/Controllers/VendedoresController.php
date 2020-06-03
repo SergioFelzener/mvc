@@ -107,4 +107,20 @@ class VendedoresController extends Controller
         }
         return json_encode($ret);
     }
+
+    public function checkVendedor(int $idVendedor): bool {
+        $vendedores=[1 => 'Marcos', 2 => 'Ana', 3 => 'Lucas', 4 => 'Paulo'];
+
+        return array_key_exists($idVendedor, $vendedores);
+    }
+
+    public function getVendedor(int $idVendedor): ? string {
+        $vendedores=[1 => 'Marcos', 2 => 'Ana', 3 => 'Lucas', 4 => 'Paulo'];
+
+        return $vendedores[$idVendedor] ?? null;
+    }
+
+
+
+
 }
